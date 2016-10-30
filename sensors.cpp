@@ -20,7 +20,7 @@ sensors::sensors(int pin, int time_scan_sensor, int count, int time_alarmed) {
 	_alarmed = false;
 }
 
-bool sensors::scan_sensor() {                                                     // Funcao scan_sensor - scaneamento de objeto sensor
+void sensors::scan_sensor() {                                                     // Funcao scan_sensor - scaneamento de objeto sensor
 	if(millis() - _tempo_millis >= _time_scan_sensor){                              // scan dpos sensores
 		_tempo_millis = millis();         
 		if(digitalRead(_pin) == false){                                              // se o pino do sensor estiver em estado true
