@@ -11,4 +11,5 @@ Construtor --> diego sensor1(1,2,3,4);
   
   funcoes:
     - sensor1.scan_sensor(); -> realiza o scan do sensor referente a porta.
+    
     - sensor1.sensor_is_alarmed() -> retorna true se o alarme tiver disparado.
