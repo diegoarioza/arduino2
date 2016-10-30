@@ -17,3 +17,4 @@ Funcoes
 	- sensor.stop() -> para e desativa o scan e disparo do sensor.
 	- sensor.scan_sensor() -> realiza o scan do sensor referente a porta.
 	- sensor.sensor_is_alarmed() -> retorna true se o alarme tiver disparado.
+	- sensor.imprimir_estado() -> imprime na saida Serial o local + estado atual do alarme.
