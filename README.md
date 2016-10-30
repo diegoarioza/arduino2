@@ -1,7 +1,6 @@
-/*
-Author: Diego Narducci Arioza
-Contato: diego.ariozza@gmail.com
-*/
+	Author: Diego Narducci Arioza
+	Contato: diego.ariozza@gmail.com
+
 
 Construtor --> diego sensor1(1,2,3,4);
 
