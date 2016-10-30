@@ -1,16 +1,17 @@
-
+/*
+Author: Diego Narducci Arioza
+Contato: diego.ariozza@gmail.com
+*/
 
 #ifndef diego_h
 #define diego_h
 
-
 #include "Arduino.h"
 
-
-class diego
+class sensors
 {
    public:
-       diego(int pin, int time_scan_sensor, int count, int time_alarmed);
+       sensors(int pin, int time_scan_sensor, int count, int time_alarmed);
        bool scan_sensor();
 	   bool sensor_is_alarmed();
 	   
@@ -27,6 +28,4 @@ class diego
 	   unsigned long _tempo_millis_alarmed;
 	   unsigned long _tempo_millis_zero;
 };
-
-
 #endif
