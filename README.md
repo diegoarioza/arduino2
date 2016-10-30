@@ -11,5 +11,7 @@ Construtor --> sensors sensor(1,2,3,4);
   
 Funcoes
 
+	- sensor.local -> retornaq local do sensor.
+
 	- sensor.scan_sensor(); -> realiza o scan do sensor referente a porta.
 	- sensor.sensor_is_alarmed() -> retorna true se o alarme tiver disparado.
