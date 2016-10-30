@@ -4,10 +4,10 @@
 
 Construtor --> sensors sensor(1,2,3,4);
 
-	1 -> pino do sensor
-	2 -> tempo entre scans (em ms)
-	3 -> qtde de scans com retorno true para retorno true da função "sensor_is_alarmed"
-	4 -> tempo (em ms) que o alarme ficara como true
+	1 -> pino do sensor.
+	2 -> tempo entre scans (em ms).
+	3 -> qtde de scans com retorno true para retorno true da função "sensor_is_alarmed".
+	4 -> tempo (em ms) que o alarme ficar como true.
   
 Funcoes
 
