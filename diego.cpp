@@ -1,11 +1,13 @@
-
+/*
+Author: Diego Narducci Arioza
+Contato: diego.ariozza@gmail.com
+*/
 
 #include "Arduino.h"
 #include "diego.h"
 
 
-diego::diego(int pin, int time_scan_sensor, int count, int time_alarmed)
-{
+diego::diego(int pin, int time_scan_sensor, int count, int time_alarmed) {
     pinMode(pin, INPUT);
 	_pin = pin;
 	_time_scan_sensor = time_scan_sensor;
@@ -21,9 +23,8 @@ diego::diego(int pin, int time_scan_sensor, int count, int time_alarmed)
 
 bool diego::scan_sensor() {                                                     // Funcao scan_sensor - scaneamento de objeto sensor
 	if(millis() - _tempo_millis >= _time_scan_sensor){                              // scan dpos sensores
-		_tempo_millis = millis();                                                   // atualizar tempo do scan
-
-		if(digitalRead(_pin) == true){                                              // se o pino do sensor estiver em estado true
+		_tempo_millis = millis();         
+		if(digitalRead(_pin) == false){                                              // se o pino do sensor estiver em estado true
 			_count_test++;                                                          // incremento da variavel _count_test
 		}
 	}
@@ -63,4 +64,3 @@ Construtor --> parametros
 	4 -> tempo em ms para o retorno true da funcao "sensor_is_alarmed" apos o disparo
 
 */
-
