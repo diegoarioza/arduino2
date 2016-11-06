@@ -18,5 +18,6 @@ Funcoes
 	- sensor.stop() -> para e desativa o scan e disparo do sensor.
 	- sensor.scan() -> realiza o scan do sensor referente a porta.
 	- sensor.is_alarmed() -> retorna true se o alarme tiver disparado.
-	- sensor.print() -> imprime na saida Serial o local + estado atual do alarme.
+	- sensor.print(1) -> imprime na saida Serial o local + estado atual do alarme.
+		1 -> tempo (em ms) de impressao na saida serial.
 	- sensor.loop() -> coloca o led 13 do arduino para piscal a cada 500ms, indicação de programa rodando.
