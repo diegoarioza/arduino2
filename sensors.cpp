@@ -28,39 +28,39 @@ sensors::sensors(int pin, int scan_interval, int count_scan, int time_alarmed, S
 	sensor_run = false;
 }
 
-void sensors::scan() {      												// Funcao scan_sensor - scaneamento de objeto sensor
-	if(sensor_run == true) {                                               				// Se o start estiver ativo
-		if(millis() - _tempo_millis >= _scan_interval){                              // scan dpos sensores
+void sensors::scan() {      												
+	if(sensor_run == true) {                                               				
+		if(millis() - _tempo_millis >= _scan_interval){                             
 			_tempo_millis = millis();         
-			if(digitalRead(_pin) == _trigger_up_or_down){                                              // se o pino do sensor estiver em estado true
-				_count_scan_inc++;                                                          // incremento da variavel _count_test
+			if(digitalRead(_pin) == _trigger_up_or_down){                                              
+				_count_scan_inc++;                                                         
 			}
 		}
 
-		if(millis() - _tempo_millis_zero >= (_count_scan * _scan_interval) + 500){        // zerar contagem se passar o tempo e nao for alarmado.
-			_tempo_millis_zero = millis();											    //  ||
-			_count_scan_inc = 0;														    //  ||															
+		if(millis() - _tempo_millis_zero >= (_count_scan * _scan_interval) + 500){        
+			_tempo_millis_zero = millis();											    
+			_count_scan_inc = 0;														    															
 		}  
 	
-		if(_alarmed == true) {			                                                // variavel auxiliar
-			if(millis() - _tempo_millis_alarmed >= _time_alarmed){                      // se o disparo do alarme exceder o tempo limite de tempo ativo
-			_alarmed = false;                                                           // variavel auxiliar _alarmed  em estado false
+		if(_alarmed == true) {			                                               
+			if(millis() - _tempo_millis_alarmed >= _time_alarmed){                      
+			_alarmed = false;                                                          
 			}
 		}
 	}
 }
 
-bool sensors::is_alarmed() {                                               // Funcao sensor_is_alarmed - retorna true se o sensor estiver alarmado
-	if(_count_scan_inc >= _count_scan) {		                                                // se a contagem exceder o numero de trues de _count
-		_count_scan_inc = 0;                                                            // zera a variavel  _count
-		_alarmed = true;                                                            // variavel _alarmed em estado true
-		_tempo_millis_alarmed = millis();                                           // atualiza tempo
-		return true;							                                    // retorno true da funcao -  se a funcao scan_sensor retornar true "_count_test" vezes 
+bool sensors::is_alarmed() {                                               
+	if(_count_scan_inc >= _count_scan) {		                                               
+		_count_scan_inc = 0;                                                            
+		_alarmed = true;                                                           
+		_tempo_millis_alarmed = millis();                                           
+		return true;							                                    
 	}else{
-		if(_alarmed == false){			         			         			    // Se o sensor n estiver alarmado, o retorno sera falso.
-			return false;                                               		    // Se o sensor n estiver alarmado, o retorno sera falso.
+		if(_alarmed == false){			         			         			    
+			return false;                                               		   
 		}else{
-			return true;														    // Se o sensor estiver alarmado, o retorno sera true mesmo 
+			return true;														     
 		}
 	}
 }
